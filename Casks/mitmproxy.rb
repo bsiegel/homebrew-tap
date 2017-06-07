@@ -1,11 +1,11 @@
 cask 'mitmproxy' do
-  version '2.0.1'
-  sha256 'e2515e8d72347d49a42476b5db51fbf9e576bbc76aa3fe5f735aa750bfa44500'
+  version '2.0.2'
+  sha256 '3a2da116a28a1ea0218e4ddf156c9afbc0e1c44653d687a73b91e833e41e31ef'
 
   # github.com/mitmproxy/mitmproxy was verified as official when first introduced to the cask
   url "https://github.com/mitmproxy/mitmproxy/releases/download/v#{version}/mitmproxy-#{version}-osx.tar.gz"
   appcast 'https://github.com/mitmproxy/mitmproxy/releases.atom',
-          checkpoint: 'c724cbdb3aa8662453997227e2bd7bce51c2afa4e09cb3ff3183e122e5422dfe'
+          checkpoint: '0299d21eb70748ecfd3836bec4e0909136f59f5587328b23c6130b046aa0999d'
   name 'mitmproxy'
   homepage 'https://mitmproxy.org/'
 

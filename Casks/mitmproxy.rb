@@ -9,8 +9,6 @@ cask 'mitmproxy' do
   name 'mitmproxy'
   homepage 'https://mitmproxy.org/'
 
-  license :mit
-
   binary 'mitmproxy'
   binary 'mitmdump'
   binary 'mitmweb'

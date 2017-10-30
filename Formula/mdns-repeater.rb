@@ -32,8 +32,7 @@ class MdnsRepeater < Formula
         <key>ProgramArguments</key>
         <array>
             <string>#{sbin}/mdns-repeater</string>
-            <string>-p</string>
-            <string>#{var}/run/mdns-repeater.pid</string>
+            <string>-f</string>
             <string>en0</string>
             <string>en1</string>
         </array>

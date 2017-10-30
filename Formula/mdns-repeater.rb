@@ -12,12 +12,38 @@ class MdnsRepeater < Formula
 
   def install
     system "make", "HGVERSION=#{version}"
-    bin.install "mdns-repeater"
+    sbin.install "mdns-repeater"
     doc.install "README.txt", "LICENSE.txt"
   end
 
+  plist_options :startup => true, :manual => "mdns-repeater"
+
+  def plist; <<~EOS
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>#{plist_name}</string>
+        <key>KeepAlive</key>
+        <true/>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>ProgramArguments</key>
+        <array>
+            <string>#{sbin}/mdns-repeater</string>
+            <string>-p</string>
+            <string>#{var}/run/mdns-repeater.pid</string>
+            <string>en0</string>
+            <string>en1</string>
+        </array>
+    </dict>
+    </plist>
+    EOS
+  end
+
   test do
-    system bin/"mdns-repeater", "-h"
+    system sbin/"mdns-repeater", "-h"
   end
 end
 

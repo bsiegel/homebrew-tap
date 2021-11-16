@@ -1,0 +1,17 @@
+name: Update Homebrew casks
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-casks:
+    runs-on: macos-latest
+    steps:
+      - name: Update Homebrew casks
+        uses: jfoster/action-homebrew-bump-cask@dev
+        with:
+          token: ${{secrets.TOKEN}}
+          tap: bsiegel/tap
+          livecheck: true

@@ -1,6 +1,6 @@
 cask "ffprobe" do
-  version "4.4.1"
-  sha256 "c0b506884064dec8cde87d0f0c447a2294d615f518cbde337d3345e6058e0160"
+  version "5.0"
+  sha256 "04c8d243a4dba1866e811169882152578febcf10af9566e020e3963cebbc66e2"
 
   url "https://evermeet.cx/ffmpeg/ffprobe-#{version}.zip"
   name "FFprobe"

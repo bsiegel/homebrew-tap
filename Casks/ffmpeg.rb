@@ -1,18 +1,29 @@
 cask "ffmpeg" do
-  version "5.0.1"
-  sha256 "6ba850f5d7a8ff1c33c7df99a1ec37687bf33b7b7c8135918ce994fc82f9c46c"
+  arch arm: "arm",
+     intel: "intel"
 
-  url "https://evermeet.cx/ffmpeg/ffmpeg-#{version}.zip"
+  version "6.0"
+
+  sha256 arm: "15e67ff413d3d2436ddb3efd282344e50b8f1c6f834979b984371b90ebaf0449",
+       intel: "4c3623c2356459d17375410d8b3b598b972e20c27131389d123e3f9470793dee"
+
+  url_version = [
+    version.major.to_i,
+    ((version.minor.to_i || 0) if (version.minor.to_i || 0) > 0 || (version.patch.to_i || 0) > 0),
+    ((version.patch.to_i || 0) if (version.patch.to_i || 0) > 0)
+  ].compact.join("")
+
+  url "https://www.osxexperts.net/ffmpeg#{url_version}#{arch}.zip"
   name "FFmpeg"
   desc "Play, record, convert, and stream audio and video"
-  homepage "https://evermeet.cx/ffmpeg/"
-
-  livecheck do
-    url "https://evermeet.cx/ffmpeg/info/ffmpeg/release"
-    regex(/\A{"name":"ffmpeg","type":"release","version":"(\d+(?:\.\d+)*)"/)
-  end
+  homepage "https://www.osxexperts.net/"
 
   conflicts_with formula: "ffmpeg"
 
   binary "ffmpeg"
+
+  livecheck do
+    url "https://www.osxexperts.net/"
+    regex(/Download ffmpeg (\d+(?:\.\d+)+)/i)
+  end
 end

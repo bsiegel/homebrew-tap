@@ -2,10 +2,14 @@ cask "ffplay" do
   arch arm: "arm",
      intel: "intel"
 
-  version "6.0"
-
-  sha256 arm: "bd8487c83b58b00957d7b4d6e51abb80c5354ad272732fdd9cef4ee554723555",
-       intel: "2740f58d73ff77a248109788bd99371e4d797eb98eff1948fe185f2e99aa580d"
+  on_arm do
+    version "6.1.1"
+    sha256 "863136f1e1c1e3065851ffb37f0d8480959f955ff08adc179ff8b306cf9a8b26"
+  end
+  on_intel do
+    version "6.1"
+    sha256 "ce4829530ccca6d8472bb1aa97af04e3f7a494bc815b303a404256d0190ab8e4"
+  end
 
   url_version = [
     version.major.to_i,

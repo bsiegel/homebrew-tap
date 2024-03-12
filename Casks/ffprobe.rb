@@ -2,10 +2,14 @@ cask "ffprobe" do
   arch arm: "arm",
      intel: "intel"
 
-  version "6.0"
-
-  sha256 arm: "582842ca7e76197ae8f4299b7f5f2d257b42168f314fc37a675708b9d5f847e0",
-       intel: "4771ff3c968d2796d9cac2593a9d6f737a3435a78dafc12e2a6e3f70ee9b0cd4"
+  on_arm do
+    version "6.1.1"
+    sha256 "8ec78ce09c0b474ae7583908c8d79d801f754d8273dca3d5a5de51f307517fc7"
+  end
+  on_intel do
+    version "6.1"
+    sha256 "977381d8cec9c477fef4cdbb259addc7e5506e47fa61087e620d5ed01a7c7a51"
+  end
 
   url_version = [
     version.major.to_i,

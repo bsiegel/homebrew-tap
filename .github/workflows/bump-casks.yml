@@ -10,7 +10,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Update Homebrew casks
-        uses: dawidd6/action-homebrew-bump-formula@v3
+        uses: eugenesvk/action-homebrew-bump-cask@3.8.4
         with:
           token: ${{secrets.TOKEN}}
           tap: bsiegel/tap

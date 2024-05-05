@@ -1,9 +1,9 @@
 cask "azureauth" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.8.5"
-  sha256 arm:   "e277fb7c84b6744c3b015eff3c081394e45b79063583c1f258d6874c008fc5e3",
-         intel: "e53682f6190d8a78df35931b509db552d51ed2d1c8c5495737c949c1b0c2d5f6"
+  version "0.8.6"
+  sha256 arm:   "839476d45973fbb687e6bfccb8d546745d81d51a24608228a796045f97dfac43",
+         intel: "067e9ed42cc84d1da3159508fd280d3f63c4e6f5778ffc18c653d0d50ffd1ed1"
 
   url "https://github.com/AzureAD/microsoft-authentication-cli/releases/download/#{version}/azureauth-#{version}-osx-#{arch}.tar.gz"
   name "azureauth"

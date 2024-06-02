@@ -1,6 +1,6 @@
 cask "yt-dlp" do
-  version "2024.04.09"
-  sha256 "7f12092fb95ffa2c8947c855298c94c612c9c0e969e132d7eca5502981955c99"
+  version "2024.05.27"
+  sha256 "b67769b0d68dbdc59a6d217713a37443b5a12c1d377c27c9946da8a537b995bb"
 
   url "https://github.com/yt-dlp/yt-dlp/releases/download/#{version}/yt-dlp"
   name "yt-dlp"
